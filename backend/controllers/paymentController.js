@@ -9,6 +9,10 @@ const integritySecret = process.env.WOMPI_INTEGRITY_SECRET;
 const privateKey = process.env.WOMPI_PRIVATE_KEY;
 
 
+// @desc    Crear la Integrity-signature
+// @route   POST /api/payments/integrity-signature
+// @access  Public
+
 export const getIntegritySignature = (req, res) => {
   const { reference, amountInCents, currency } = req.body;
 
@@ -17,6 +21,10 @@ export const getIntegritySignature = (req, res) => {
 
   res.json({ integritySignature });
 };
+
+// @desc    Obtener el estado de la transaccion
+// @route   GET /api/payments/transaction-status
+// @access  Public
 
 export const getTransactionStatus = async (req, res) => {
   const transactionId = req.query.id;

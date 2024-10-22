@@ -17,20 +17,20 @@ const PaymentScreen = () => {
 
   return (
     <Container className="mt-5">
-      <h2>Complete Your Payment</h2>
+      <h2>Completa tu pago</h2>
       <Form>
         <Form.Group controlId="amount">
-          <Form.Label>Enter Amount (COP)</Form.Label>
+          <Form.Label>Igresar Cantidad (COP)</Form.Label>
           <Form.Control
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             min="1"
-            placeholder="Enter amount in COP"
+            placeholder="Ingresa la cantidan en COP"
           />
         </Form.Group>
         <Button className="mt-3" onClick={handleConfirmAmount}>
-          Confirm Amount
+          Confirmar
         </Button>
       </Form>
       {confirmedAmount && <WompiButton amount={confirmedAmount} />}

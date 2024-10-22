@@ -34,7 +34,7 @@ const WompiButton = ({ amount }) => {
         buttonContainerRef.current.innerHTML = '';
         buttonContainerRef.current.appendChild(script);
       } catch (error) {
-        console.error('Error loading Wompi widget:', error);
+        console.error('Error cargando el widget de wompi:', error);
       }
     };
 

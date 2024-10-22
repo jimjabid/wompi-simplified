@@ -21,34 +21,34 @@ const PaymentResult = () => {
 
   return (
     <Container className="mt-5">
-      <h2>Payment Result</h2>
+      <h2>Resumen del Pago</h2>
       {transactionData ? (
         <>
           <Alert variant={transactionData.status === 'APPROVED' ? 'success' : 'warning'}>
-            Your payment has been {transactionData.status.toLowerCase()}.
+            You pago a sido {transactionData.status.toLowerCase()}.
           </Alert>
           <Table striped bordered>
             <tbody>
               <tr>
-                <td><strong>Transaction ID</strong></td>
+                <td><strong>ID de la Transaccion</strong></td>
                 <td>{transactionData.id}</td>
               </tr>
               <tr>
-                <td><strong>Amount</strong></td>
+                <td><strong>Cantidad</strong></td>
                 <td>{transactionData.amount_in_cents / 100} COP</td>
               </tr>
               <tr>
-                <td><strong>Status</strong></td>
+                <td><strong>Estado</strong></td>
                 <td>{transactionData.status}</td>
               </tr>
             </tbody>
           </Table>
           <Link to="/payment">
-            <Button variant="primary">Make Another Payment</Button>
+            <Button variant="primary">Hacer otro Pago</Button>
           </Link>
         </>
       ) : (
-        <Alert variant="info">Fetching payment status...</Alert>
+        <Alert variant="info">Buscando el resumen del pago...</Alert>
       )}
     </Container>
   );
